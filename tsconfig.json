@@ -22,11 +22,10 @@
     "baseUrl": "src/",
     "outDir": "dist/",
     "paths": {
-      "lib/*": ["lib/*"],
-      "views/*": ["views/*"],
+      "utils/*": ["utils/*"],
+      "pages/*": ["pages/*"],
       "components/*": ["components/*"],
       "routes/*": ["routes/*"],
-      "assets/*": ["assets/*"],
     }
   },
   "include": ["src"],

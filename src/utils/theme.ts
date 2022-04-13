@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material'
 
 declare module '@mui/material/styles' {
-  // eslint-disable-next-line prettier/prettier
   interface Theme {
     colors: {
       black: string
@@ -9,7 +8,7 @@ declare module '@mui/material/styles' {
       warmGray: string
       lightGray: string
       blue: string
-    },
+    }
   }
 }
 

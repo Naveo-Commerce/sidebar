@@ -48,7 +48,7 @@ module.exports = {
           "indent": ["error", 2],
           'func-style': [2, 'expression'],
           'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
-          "prettier/prettier": [2, {"singleQuote": true, "parser": "flow", 'semi': false, 'trailingComma': 'es5' }]
+          "prettier/prettier": [2, {"singleQuote": true, "parser": "typescript", 'semi': false, 'trailingComma': 'es5', 'tabWidth': 2, 'arrowParens': 'always', 'jsxBracketSameLine': true }]
         },
       },
   
