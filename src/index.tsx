@@ -5,15 +5,15 @@ import { ThemeProvider } from '@mui/material'
 import theme from 'utils/theme'
 import { BrowserRouter } from 'react-router-dom'
 
-import Layout from 'components/Layout/Layout'
 import reportWebVitals from './reportWebVitals'
+import RouteLinks from 'routes/RouteLinks'
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Layout />
+        <RouteLinks />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
