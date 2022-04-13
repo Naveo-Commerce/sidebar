@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import React, { useState } from 'react'
 import List from '@mui/material/List'
-import { ROUTES } from 'routes/routes'
+import { linksArray } from 'routes/routes'
 import { useLocation } from 'react-router-dom'
 import { DrawerHeader, ListItemText, SidebarListItem, Drawer } from './elements'
 
@@ -15,41 +15,37 @@ const SideBar: React.FunctionComponent = () => {
       variant="permanent"
       open={isSidebarOpen}
       anchor="left"
-      onClick={toggleSidebar}
-    >
+      onClick={toggleSidebar}>
       <DrawerHeader>
         <img src={`${process.env.PUBLIC_URL}/logo.svg`} />
       </DrawerHeader>
       {isSidebarOpen && (
         <Box sx={{ width: '100%' }} role="presentation">
-          <nav>
-            <List sx={{ paddingTop: '10px' }}>
-              <SidebarListItem>
-                <ListItemText
-                  as="div"
-                  isSelected={pathname === ROUTES.HOME}
-                  to={ROUTES.HOME}
-                >
-                  Home
-                </ListItemText>
-              </SidebarListItem>
-              {/*  {isSidebarOpen &&
-                linksArray.map((item) => {
-                  const isSelected = pathname === SIDEBARROUTES[item]
+          <List sx={{ paddingTop: '10px' }}>
+            {/* <SidebarListItem>
+              <ListItemText
 
-                  return (
-                    <SidebarListItem key={SIDEBARROUTES[item]}>
-                      <ListItemText
-                        isSelected={isSelected}
-                        to={SIDEBARROUTES[item]}
-                      >
-                        {t(item.toLowerCase())}
-                      </ListItemText>
-                    </SidebarListItem>
-                  )
-                })} */}
-            </List>
-          </nav>
+                isSelected={pathname === ROUTES.HOME}
+                to={ROUTES.HOME}>
+                Home
+              </ListItemText>
+            </SidebarListItem> */}
+            {isSidebarOpen &&
+              linksArray.map((item) => {
+                const isSelected = pathname === item.path
+
+                return (
+                  <SidebarListItem key={item.key}>
+                    <ListItemText
+                      as="div"
+                      isSelected={isSelected}
+                      to={item.path}>
+                      {item.name}
+                    </ListItemText>
+                  </SidebarListItem>
+                )
+              })}
+          </List>
         </Box>
       )}
     </Drawer>
